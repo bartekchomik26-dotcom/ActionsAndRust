@@ -1,0 +1,176 @@
+[mod]
+id = "ans_beyond"
+version = "1.0.0"
+priority = 100
+
+# Reads `Game`'s mob list and draws through `native_draw_quad`: pinned to the
+# Horizon it was made and checked against (nightly 2026-11-13).
+[compatibility]
+horizon_revision = "9f42064c11efe7ef3e5ed2baad7ddc2a3b36eea0"
+
+# The Bedrock engine (Molang, geometry, animations, controllers, render
+# controllers): plain Rust with no dependencies, built once.
+[[crate]]
+id = "engine"
+path = "engine"
+
+[[module]]
+id = "glue"
+file = "crates/horizon-client/src/game.rs"
+name = "ans_beyond"
+source = "glue.rs"
+
+[[injection]]
+id = "mob"
+hook = "mob_submit"
+hook_version = 1
+kind = "HEAD"
+helper = "mob.rs"
+bindings = [
+  { name = "game", ty = "&crate::game::Game<'_>", value = "self" },
+  { name = "mob", ty = "&crate::game::NativeMobRender<'_>", value = "mob" },
+  { name = "draw", ty = "&mut crate::game::BlockEntityDraw", value = "&mut *draw" },
+  { name = "drawn", ty = "&mut bool", value = "&mut *drawn" },
+]
+
+[[injection]]
+id = "frame"
+hook = "frame"
+hook_version = 1
+kind = "HEAD"
+helper = "frame.rs"
+bindings = [
+  { name = "game", ty = "&mut crate::game::Game<'_>", value = "&mut *self" },
+]
+
+[[injection]]
+id = "reload"
+hook = "client_resources_reloaded"
+hook_version = 1
+kind = "HEAD"
+helper = "reload.rs"
+bindings = []
+
+[[injection]]
+id = "list"
+hook = "mods"
+hook_version = 1
+kind = "HEAD"
+helper = "list.rs"
+bindings = [
+  { name = "mods", ty = "&mut Vec<horizon_client::mod_api::NativeMod>", value = "&mut *mods" },
+]
+
+[[injection]]
+id = "settings"
+hook = "settings"
+hook_version = 1
+kind = "HEAD"
+helper = "settings.rs"
+bindings = [
+  { name = "game", ty = "&mut crate::game::Game<'_>", value = "&mut *self" },
+  { name = "mod_id", ty = "&str", value = "mod_id" },
+  { name = "buttons", ty = "&mut Vec<String>", value = "&mut *buttons" },
+]
+
+[[injection]]
+id = "click"
+hook = "settings_click"
+hook_version = 1
+kind = "HEAD"
+helper = "click.rs"
+bindings = [
+  { name = "game", ty = "&mut crate::game::Game<'_>", value = "&mut *self" },
+  { name = "mod_id", ty = "&str", value = "mod_id" },
+  { name = "button", ty = "usize", value = "button" },
+]
+
+# Players: A&B's player model and animations, with each player's skin.
+[[injection]]
+id = "player"
+hook = "player_submit"
+hook_version = 1
+kind = "HEAD"
+helper = "player.rs"
+bindings = [
+  { name = "game", ty = "&crate::game::Game<'_>", value = "self" },
+  { name = "player", ty = "&crate::game::NativeMobRender<'_>", value = "player" },
+  { name = "who", ty = "&crate::game::NativePlayerRender<'_>", value = "who" },
+  { name = "drawn", ty = "&mut bool", value = "&mut *drawn" },
+  { name = "draw", ty = "&mut crate::game::BlockEntityDraw", value = "&mut *draw" },
+]
+
+# A mod that hooks player_submit says so, or the game poses no player for it.
+[[injection]]
+id = "listened"
+hook = "player_render_listened"
+hook_version = 1
+kind = "HEAD"
+helper = "listened.rs"
+bindings = [
+  { name = "listened", ty = "&mut bool", value = "&mut *listened" },
+]
+
+# First person: A&B's arms in the hand pass. `hand_geometry` is the game's own
+# function (no hook point draws a replacement hand), so this pins the commit.
+[[injection]]
+id = "hands"
+target = "horizon_client::game::frame_geometry::Game<'_>::hand_geometry"
+kind = "RETURN"
+helper = "hands.rs"
+bindings = [
+  { name = "game", ty = "&mut crate::game::Game<'_>", value = "&mut *self" },
+  { name = "alpha", ty = "f64", value = "alpha" },
+  { name = "value", ty = "(Vec<Vertex>, Vec<(u32, i32)>)", value = "$value" },
+]
+
+# The Actions & Stuff screen: a key opens it (`menu_key`, K), the screen hooks
+# draw it and take its clicks and scrolling.
+[[injection]]
+id = "menu_key"
+hook = "key"
+hook_version = 1
+kind = "HEAD"
+helper = "menu_key.rs"
+bindings = [
+  { name = "game", ty = "&mut crate::game::Game<'_>", value = "&mut *self" },
+  { name = "key", ty = "&str", value = "key" },
+  { name = "pressed", ty = "bool", value = "pressed" },
+]
+
+[[injection]]
+id = "menu_draw"
+hook = "screen_render_post"
+hook_version = 1
+kind = "HEAD"
+helper = "menu_draw.rs"
+bindings = [
+  { name = "game", ty = "&crate::game::Game<'_>", value = "self" },
+  { name = "batch", ty = "&mut horizon_client::hud::HudBatch", value = "&mut *batch" },
+  { name = "screen", ty = "&horizon_client::mod_api::NativeScreenView<'_>", value = "screen" },
+]
+
+[[injection]]
+id = "menu_click"
+hook = "screen_mouse_button_pressed_pre"
+hook_version = 1
+kind = "HEAD"
+helper = "menu_click.rs"
+bindings = [
+  { name = "game", ty = "&crate::game::Game<'_>", value = "self" },
+  { name = "screen", ty = "&horizon_client::mod_api::NativeScreenView<'_>", value = "screen" },
+  { name = "button", ty = "i32", value = "button" },
+  { name = "canceled", ty = "&mut bool", value = "&mut *canceled" },
+]
+
+[[injection]]
+id = "menu_scroll"
+hook = "screen_mouse_scrolled_pre"
+hook_version = 1
+kind = "HEAD"
+helper = "menu_scroll.rs"
+bindings = [
+  { name = "game", ty = "&crate::game::Game<'_>", value = "self" },
+  { name = "scroll", ty = "[f64; 2]", value = "scroll" },
+  { name = "canceled", ty = "&mut bool", value = "&mut *canceled" },
+]

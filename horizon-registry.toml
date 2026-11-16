@@ -1,0 +1,18 @@
+name = "Actions & Beyond"
+summary = "Actions & Stuff's animated mobs, players and first person arms on Horizon, built from your own copy of the mod."
+description = """
+A Rust port of the Actions & Beyond 1.13 Fabric mod's Bedrock entity runtime (Molang, geometry,
+animations, animation and render controllers, attachables) as a Horizon native mod.
+
+It draws Actions & Stuff's mobs and players with their models, animations and sounds, replaces the
+first person arms with A&B's animated ones, and adds the pack's settings screen (K) and an
+enchantment outline around enchanted held items.
+
+The models, animations, textures and sounds are Oreville Studios' and are not in this mod: you
+build the `ans` content mod from your own copy of the Actions & Beyond jar with
+`tools/build_content.py` (see the README). Without it this mod draws nothing.
+
+It doesn't send or receive anything over the network, and it writes only `config/ans_beyond.txt`.
+"""
+authors = ["Actions & Beyond Horizon port contributors"]
+license = "MIT"

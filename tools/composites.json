@@ -1,0 +1,597 @@
+{
+ "entity/sheep/sheep": {
+  "size": [
+   64,
+   64
+  ],
+  "parts": [
+   {
+    "sprite": "entity/sheep/sheep",
+    "src": null,
+    "dst": [
+     0,
+     0
+    ],
+    "tinted": false
+   },
+   {
+    "sprite": "entity/sheep/sheep_wool_undercoat",
+    "src": null,
+    "dst": [
+     0,
+     0
+    ],
+    "tinted": true
+   },
+   {
+    "sprite": "entity/sheep/sheep_wool",
+    "src": null,
+    "dst": [
+     0,
+     32
+    ],
+    "tinted": true
+   }
+  ]
+ },
+ "entity/sheep/sheep_baby": {
+  "size": [
+   32,
+   32
+  ],
+  "parts": [
+   {
+    "sprite": "entity/sheep/sheep_baby",
+    "src": [
+     0,
+     0,
+     32,
+     32
+    ],
+    "dst": [
+     0,
+     0
+    ],
+    "tinted": false
+   },
+   {
+    "sprite": "entity/sheep/sheep_wool_baby",
+    "src": [
+     0,
+     0,
+     32,
+     32
+    ],
+    "dst": [
+     0,
+     0
+    ],
+    "tinted": true
+   }
+  ]
+ },
+ "entity/phantom/phantom_bedrock": {
+  "size": [
+   64,
+   64
+  ],
+  "parts": [
+   {
+    "sprite": "entity/phantom/phantom",
+    "src": null,
+    "dst": [
+     0,
+     0
+    ],
+    "tinted": true
+   },
+   {
+    "sprite": "entity/phantom/phantom_eyes",
+    "src": null,
+    "dst": [
+     0,
+     0
+    ],
+    "tinted": false
+   }
+  ]
+ },
+ "entity/warden/warden_tendrils": {
+  "size": [
+   128,
+   128
+  ],
+  "parts": [
+   {
+    "sprite": "entity/warden/warden",
+    "src": [
+     52,
+     32,
+     32,
+     16
+    ],
+    "dst": [
+     52,
+     32
+    ],
+    "tinted": true
+   },
+   {
+    "sprite": "entity/warden/warden",
+    "src": [
+     58,
+     0,
+     32,
+     16
+    ],
+    "dst": [
+     58,
+     0
+    ],
+    "tinted": true
+   }
+  ]
+ },
+ "block/repeating_command_block_front_frame0": {
+  "size": [
+   16,
+   16
+  ],
+  "parts": [
+   {
+    "sprite": "block/repeating_command_block_front",
+    "src": [
+     0,
+     0,
+     16,
+     16
+    ],
+    "dst": [
+     0,
+     0
+    ],
+    "tinted": false
+   }
+  ]
+ },
+ "block/repeating_command_block_back_frame0": {
+  "size": [
+   16,
+   16
+  ],
+  "parts": [
+   {
+    "sprite": "block/repeating_command_block_back",
+    "src": [
+     0,
+     0,
+     16,
+     16
+    ],
+    "dst": [
+     0,
+     0
+    ],
+    "tinted": false
+   }
+  ]
+ },
+ "entity/zombie/drowned": {
+  "size": [
+   64,
+   64
+  ],
+  "parts": [
+   {
+    "sprite": "entity/zombie/drowned",
+    "src": null,
+    "dst": [
+     0,
+     0
+    ],
+    "tinted": false
+   },
+   {
+    "sprite": "entity/zombie/drowned_outer_layer",
+    "src": [
+     0,
+     0,
+     32,
+     16
+    ],
+    "dst": [
+     32,
+     0
+    ],
+    "tinted": false
+   },
+   {
+    "sprite": "entity/zombie/drowned_outer_layer",
+    "src": [
+     16,
+     16,
+     24,
+     16
+    ],
+    "dst": [
+     16,
+     32
+    ],
+    "tinted": false
+   },
+   {
+    "sprite": "entity/zombie/drowned_outer_layer",
+    "src": [
+     40,
+     16,
+     16,
+     16
+    ],
+    "dst": [
+     48,
+     48
+    ],
+    "tinted": false
+   },
+   {
+    "sprite": "entity/zombie/drowned_outer_layer",
+    "src": [
+     40,
+     16,
+     16,
+     16
+    ],
+    "dst": [
+     40,
+     32
+    ],
+    "tinted": false
+   },
+   {
+    "sprite": "entity/zombie/drowned_outer_layer",
+    "src": [
+     16,
+     48,
+     16,
+     16
+    ],
+    "dst": [
+     0,
+     48
+    ],
+    "tinted": false
+   },
+   {
+    "sprite": "entity/zombie/drowned_outer_layer",
+    "src": [
+     0,
+     16,
+     16,
+     16
+    ],
+    "dst": [
+     0,
+     32
+    ],
+    "tinted": false
+   }
+  ]
+ },
+ "entity/zombie/drowned_baby": {
+  "size": [
+   64,
+   64
+  ],
+  "parts": [
+   {
+    "sprite": "entity/zombie/drowned_baby",
+    "src": null,
+    "dst": [
+     0,
+     0
+    ],
+    "tinted": false
+   },
+   {
+    "sprite": "entity/zombie/drowned_outer_layer_baby",
+    "src": [
+     32,
+     0,
+     32,
+     16
+    ],
+    "dst": [
+     32,
+     0
+    ],
+    "tinted": false
+   }
+  ]
+ },
+ "entity/cat/cat_white_tame_baby": {
+  "size": [
+   32,
+   32
+  ],
+  "parts": [
+   {
+    "sprite": "entity/cat/cat_white_baby",
+    "src": null,
+    "dst": [
+     0,
+     0
+    ],
+    "tinted": false
+   },
+   {
+    "sprite": "entity/cat/cat_collar_baby",
+    "src": null,
+    "dst": [
+     0,
+     0
+    ],
+    "tinted": true
+   }
+  ]
+ },
+ "entity/cat/cat_black_tame_baby": {
+  "size": [
+   32,
+   32
+  ],
+  "parts": [
+   {
+    "sprite": "entity/cat/cat_black_baby",
+    "src": null,
+    "dst": [
+     0,
+     0
+    ],
+    "tinted": false
+   },
+   {
+    "sprite": "entity/cat/cat_collar_baby",
+    "src": null,
+    "dst": [
+     0,
+     0
+    ],
+    "tinted": true
+   }
+  ]
+ },
+ "entity/cat/cat_red_tame_baby": {
+  "size": [
+   32,
+   32
+  ],
+  "parts": [
+   {
+    "sprite": "entity/cat/cat_red_baby",
+    "src": null,
+    "dst": [
+     0,
+     0
+    ],
+    "tinted": false
+   },
+   {
+    "sprite": "entity/cat/cat_collar_baby",
+    "src": null,
+    "dst": [
+     0,
+     0
+    ],
+    "tinted": true
+   }
+  ]
+ },
+ "entity/cat/cat_siamese_tame_baby": {
+  "size": [
+   32,
+   32
+  ],
+  "parts": [
+   {
+    "sprite": "entity/cat/cat_siamese_baby",
+    "src": null,
+    "dst": [
+     0,
+     0
+    ],
+    "tinted": false
+   },
+   {
+    "sprite": "entity/cat/cat_collar_baby",
+    "src": null,
+    "dst": [
+     0,
+     0
+    ],
+    "tinted": true
+   }
+  ]
+ },
+ "entity/cat/cat_british_shorthair_tame_baby": {
+  "size": [
+   32,
+   32
+  ],
+  "parts": [
+   {
+    "sprite": "entity/cat/cat_british_shorthair_baby",
+    "src": null,
+    "dst": [
+     0,
+     0
+    ],
+    "tinted": false
+   },
+   {
+    "sprite": "entity/cat/cat_collar_baby",
+    "src": null,
+    "dst": [
+     0,
+     0
+    ],
+    "tinted": true
+   }
+  ]
+ },
+ "entity/cat/cat_calico_tame_baby": {
+  "size": [
+   32,
+   32
+  ],
+  "parts": [
+   {
+    "sprite": "entity/cat/cat_calico_baby",
+    "src": null,
+    "dst": [
+     0,
+     0
+    ],
+    "tinted": false
+   },
+   {
+    "sprite": "entity/cat/cat_collar_baby",
+    "src": null,
+    "dst": [
+     0,
+     0
+    ],
+    "tinted": true
+   }
+  ]
+ },
+ "entity/cat/cat_persian_tame_baby": {
+  "size": [
+   32,
+   32
+  ],
+  "parts": [
+   {
+    "sprite": "entity/cat/cat_persian_baby",
+    "src": null,
+    "dst": [
+     0,
+     0
+    ],
+    "tinted": false
+   },
+   {
+    "sprite": "entity/cat/cat_collar_baby",
+    "src": null,
+    "dst": [
+     0,
+     0
+    ],
+    "tinted": true
+   }
+  ]
+ },
+ "entity/cat/cat_ragdoll_tame_baby": {
+  "size": [
+   32,
+   32
+  ],
+  "parts": [
+   {
+    "sprite": "entity/cat/cat_ragdoll_baby",
+    "src": null,
+    "dst": [
+     0,
+     0
+    ],
+    "tinted": false
+   },
+   {
+    "sprite": "entity/cat/cat_collar_baby",
+    "src": null,
+    "dst": [
+     0,
+     0
+    ],
+    "tinted": true
+   }
+  ]
+ },
+ "entity/cat/cat_tabby_tame_baby": {
+  "size": [
+   32,
+   32
+  ],
+  "parts": [
+   {
+    "sprite": "entity/cat/cat_tabby_baby",
+    "src": null,
+    "dst": [
+     0,
+     0
+    ],
+    "tinted": false
+   },
+   {
+    "sprite": "entity/cat/cat_collar_baby",
+    "src": null,
+    "dst": [
+     0,
+     0
+    ],
+    "tinted": true
+   }
+  ]
+ },
+ "entity/cat/cat_all_black_tame_baby": {
+  "size": [
+   32,
+   32
+  ],
+  "parts": [
+   {
+    "sprite": "entity/cat/cat_all_black_baby",
+    "src": null,
+    "dst": [
+     0,
+     0
+    ],
+    "tinted": false
+   },
+   {
+    "sprite": "entity/cat/cat_collar_baby",
+    "src": null,
+    "dst": [
+     0,
+     0
+    ],
+    "tinted": true
+   }
+  ]
+ },
+ "entity/cat/cat_jellie_tame_baby": {
+  "size": [
+   32,
+   32
+  ],
+  "parts": [
+   {
+    "sprite": "entity/cat/cat_jellie_baby",
+    "src": null,
+    "dst": [
+     0,
+     0
+    ],
+    "tinted": false
+   },
+   {
+    "sprite": "entity/cat/cat_collar_baby",
+    "src": null,
+    "dst": [
+     0,
+     0
+    ],
+    "tinted": true
+   }
+  ]
+ }
+}
